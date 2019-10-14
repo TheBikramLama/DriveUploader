@@ -8,9 +8,11 @@ sudo apt-get install aria2
 
 # Make Executables
 chmod +x upload.sh
+chmod +x upload-torrent.sh
 chmod +x logout.sh
 
 # Exit
 clear
-read -n 1 -s -r -p "Gdrive Uploader Ready."
+echo "Uploader Ready."
+read -n 1 -s -r -p "Press any key to continue."
 clear
