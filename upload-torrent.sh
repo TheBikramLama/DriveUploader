@@ -6,7 +6,7 @@ read -p "Magnet URI: " url
 
 # Download the magnet using Aria2C
 clear
-aria2c -o "$url"
+aria2c "$url"
 
 # Folder Selection
 clear
