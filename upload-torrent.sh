@@ -10,7 +10,7 @@ gdrive about
 
 # Download the magnet using Aria2C
 clear
-aria2c "$url"
+aria2c --seed-time=0 --max-upload-limit=5K "$url"
 
 # Folder Selection
 clear
