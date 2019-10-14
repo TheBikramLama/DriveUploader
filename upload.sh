@@ -5,13 +5,13 @@ clear
 read -p "Download URL: " url
 read -p "Desired Name: " name
 
-# Download the file using Aria2C
-clear
-aria2c -o "$name" "$url"
-
 # Check if the user is Logged in
 clear
 gdrive about
+
+# Download the file using Aria2C
+clear
+aria2c -o "$name" "$url"
 
 # Upload the file using Gdrive
 clear

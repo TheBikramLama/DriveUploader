@@ -4,6 +4,10 @@
 clear
 read -p "Magnet URI: " url
 
+# Check if the user is Logged in
+clear
+gdrive about
+
 # Download the magnet using Aria2C
 clear
 aria2c "$url"
@@ -24,10 +28,6 @@ do
 	test -n "$file" && break
 	echo "Please select valid file"
 done
-
-# Check if the user is Logged in
-clear
-gdrive about
 
 # Upload the file using Gdrive
 clear
