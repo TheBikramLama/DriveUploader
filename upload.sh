@@ -39,6 +39,21 @@ startDownload() {
     esac
 }
 
+# Uploader Function
+startUpload() {
+    clear
+    case $downloadType in
+        "Torrent")
+            gdrive upload "${folder}${file}"
+            # Delete folder after process is completed
+            rm -rf $folder
+        ;;
+        "File")
+            gdrive upload "$name" --delete
+        ;;
+    esac
+}
+
 # Check if commands are installed properly
 checkCommand
 # Check if Gdrive is logged in
@@ -68,25 +83,31 @@ esac
 # Start Download process
 startDownload
 
-exit 1
+# Folder selection
+if [ $downloadType == "Torrent" ]
+then
+    clear
+    echo "Please select the torrent folder:"
+    select folder in */
+    do
+        test -n "$folder" && break
+        echo "Please select valid folder."
+    done
+    # File Selection
+    echo "Please select the file to upload:"
+    cd $folder
+    select file in *
+    do
+        test -n "$file" && break
+        echo "Please select valid file."
+    done
+fi
 
-# Get Information from the user
-clear
-read -p "Download URL: " url
-read -p "Desired Name: " name
-
-# Check if the user is Logged in
-clear
-gdrive about
-
-# Download the file using Aria2C
-clear
-aria2c -o "$name" "$url"
-
-# Upload the file using Gdrive
-clear
-gdrive upload "$name" --delete
+# Start Upload
+startUpload
 
 # Pause and exit
+clear
 read -n 1 -s -r -p "Press any key to continue"
 clear
+exit 1

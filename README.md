@@ -8,4 +8,6 @@ Steps to follow:
 3. Run **upload.sh** for uploading files.<br />
 `./upload.sh`
 <br /><br />
-Note: If you want to switch google accounts, run **logout.sh**
+Notes:<br />
+If you want to switch google accounts, run **logout.sh**
+Torrent Downloader/Uploader has some issues, run it with caution
