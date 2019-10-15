@@ -28,8 +28,15 @@ checkGdrive() {
 
 # Downloader Function
 startDownload() {
-    echo $downloadType
-    echo $url
+    clear
+    case $downloadType in
+        "Torrent")
+            aria2c --seed-time=0 --max-upload-limit=5K "$url"
+        ;;
+        "File")
+            aria2c -o "$name" "$url"
+        ;;
+    esac
 }
 
 # Check if commands are installed properly
@@ -61,7 +68,6 @@ esac
 # Start Download process
 startDownload
 
-echo $downloadType
 exit 1
 
 # Get Information from the user
