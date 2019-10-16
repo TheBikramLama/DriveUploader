@@ -44,9 +44,10 @@ startUpload() {
     clear
     case $downloadType in
         "Torrent")
-            gdrive upload "${folder}${file}"
+            gdrive upload "${file}"
             # Delete folder after process is completed
-            rm -rf $folder
+            cd ..
+            rm -rf "${folder}"
         ;;
         "File")
             gdrive upload "$name" --delete
