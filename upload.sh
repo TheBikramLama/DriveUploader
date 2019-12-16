@@ -41,8 +41,8 @@ startDownload() {
 
 # Uploader Function
 startUpload() {
+    folderid=1oknCkmF9lx7LyjzHF92iLAYf9WrQWXAq
     clear
-    $drive_folder_id = 1oknCkmF9lx7LyjzHF92iLAYf9WrQWXAq
     case $downloadType in
         "Torrent")
             gdrive upload "${file}"
@@ -51,7 +51,7 @@ startUpload() {
             rm -rf "${folder}"
         ;;
         "File")
-            gdrive --parent "$drive_folder_id" upload "$name" --delete
+            gdrive upload --parent "$folderid" "$name" --delete
         ;;
     esac
 }
