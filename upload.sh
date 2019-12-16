@@ -42,7 +42,7 @@ startDownload() {
 # Uploader Function
 startUpload() {
     clear
-    $drive_folder_id = "1oknCkmF9lx7LyjzHF92iLAYf9WrQWXAq"
+    $drive_folder_id = 1oknCkmF9lx7LyjzHF92iLAYf9WrQWXAq
     case $downloadType in
         "Torrent")
             gdrive upload "${file}"
