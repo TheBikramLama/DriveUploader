@@ -5,7 +5,9 @@ Steps to follow:
 `chmod +x install.sh`
 2. Run **install.sh**<br />
 `./install.sh`
-3. Run **upload.sh** for uploading files.<br />
+3. Set Google Drive Folder ID in **upload.sh line 44**<br />
+`folderid=FOLDER_ID_HERE`
+4. Run **upload.sh** for uploading files.<br />
 `./upload.sh`
 <br /><br />
 Notes:<br />
