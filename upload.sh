@@ -41,7 +41,7 @@ startDownload() {
 
 # Uploader Function
 startUpload() {
-    folderid=1oknCkmF9lx7LyjzHF92iLAYf9WrQWXAq
+    folderid=FOLDER_ID_HERE
     clear
     case $downloadType in
         "Torrent")
