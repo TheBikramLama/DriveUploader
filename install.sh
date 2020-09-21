@@ -4,7 +4,7 @@
 go get github.com/prasmussen/gdrive
 
 # Install Aria2c
-sudo apt-get install aria2
+sudo apt-get install -y aria2
 
 # Make Executables
 chmod +x upload.sh
